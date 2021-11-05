@@ -23,7 +23,15 @@
 
 //CODE HERE
 
+const greetUser = (hi) => {
+	const greeting = 'Welcome back, ';
 
+	return greeting + hi;
+}
+
+const USERNAME = greetUser('Sir Reginald Theordore Lippersworth III');
+
+console.log(` "${USERNAME}"`)
 
 
 
@@ -47,9 +55,34 @@
         // `You're in our delivery zone!`
 */
 
-const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
+
 
 //CODE HERE
+
+//******************NEED TO COME BACK TO TROUBLESHOOT. PRINTING EVERYTHING*******/
+
+const canWeDeliver = [85205, 85204, 85203, 85213, 85206]
+canWeDeliver.forEach(function(el, i, arr) {
+	arr[i] = el - 1
+})
+
+console.log(canWeDeliver)
+
+const zipCode = ['85205', '85204', '85203', '85213', '85206']
+
+const deliveryZone = [];
+
+for (let i = 0; i < zipCode.length; i++) {
+	if (zipCode[i].endsWith('6')) deliveryZone.push(zipCode[i])
+    console.log('Sorry, we cannot deliver to that address.')
+}
+
+zipCode.forEach(zone => {
+	if (zone.endsWith('5','3','4')) deliveryZone.push(zone);
+    console.log("You're in our delivery zone!")
+})
+
+console.log(deliveryZone);
 
 
 
@@ -71,6 +104,30 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 */
 
 // CODE HERE
+
+//**need to find workaround for 'includes' */
+const canWeDeliverTwo = [85205, 85204, 85203, 85213, 85206]
+canWeDeliver.forEach(function(el, i, arr) {
+	arr[i] = el - 1
+})
+
+console.log(canWeDeliverTwo)
+
+const zipCodeTwo = ['85205', '85204', '85203', '85213', '85206']
+
+const deliveryZoneTwo = [];
+
+for (let i = 0; i < zipCodeTwo.length; i++) {
+	if (zipCodeTwo[i].endsWith('6')) deliveryZoneTwo.push(zipCodeTwo[i])
+    console.log('Sorry, we cannot deliver to that address.')
+}
+
+zipCodeTwo.forEach(zoneTwo => {
+	if (zoneTwo.endsWith('5','3','4')) deliveryZone.push(zone);
+    console.log("You're in our delivery zone!")
+})
+
+console.log(deliveryZoneTwo);
 
 
 //////////////////PROBLEM 3////////////////////
@@ -108,7 +165,13 @@ const deals = [
 
 //CODE HERE
 
+const tenPercent = deals.splice('15% Off!' , '10% Off!')
+console.log(deals)
 
+//deals.replace didn't work. looking for other approach
+
+//deals.replace('15% Off!' , '10% Off!')
+//console.log(deals)
 
 /*
     The restaurant is going to continue its
@@ -124,3 +187,23 @@ const deals = [
 */
 
 //CODE HERE
+// const deals = [
+//     {
+//         title: '15% Off!', 
+//         desc: 'Applied to your entire order when you spend $30 or more'
+//     }, 
+//     {
+//         title: 'Free Kids Meal with 2 Regular Entrees', 
+//         desc: '   This deal lasts until the end of March! '
+//     }
+// ]
+
+const noWhitespace = '   This deal lasts until the end of March! '
+const newWhitespace = noWhitespace.trim()
+let removed = newWhitespace.splice(3, 1, 'April!')
+//deals.replace('March!' , 'April!')
+console.log(newWhitespace) === 'This deal lasts until the end of April!'
+
+// const newWhitespace = 'This deal lasts until the end of March!'
+// deals.replace('March!'; 'April!')
+// console.log(deals)

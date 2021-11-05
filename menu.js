@@ -32,7 +32,14 @@
 
 //CODE HERE
 
-
+const pizza = {
+    name: 'Pepparoni Za',
+    price: 14,
+    category: 'Full Pies',
+    popularity: 8,
+    rating: 8,
+    tags: ['pizza', 'brick oven', 'yummy'],
+}
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -44,6 +51,7 @@
 
 //CODE HERE
 
+console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -54,6 +62,8 @@
 
 //CODE HERE
 
+console.log(pizza.tags)
+console.log(pizza['tags'])
 
 /*
     Third, destructure the price off of the
@@ -64,7 +74,8 @@
 
 //CODE HERE
 
-
+const {price: pizzaPrice} = pizza
+console.log(pizzaPrice)
 /*
     Fourth, and last, destructure the category
     property.
@@ -73,7 +84,8 @@
 */
 
 //CODE HERE
-
+const {category: pizzaCategory} = pizza
+console.log(pizzaCategory)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -89,6 +101,14 @@
 
 //CODE HERE
 
+let foodArr = {
+    name: "Slip 'n Sliders",
+    price: 10,
+    category: 'Burgers',
+    popularity: 9,
+    rating: 10,
+    tags: ['burgers', 'sliders', 'bacon'],
+}
 
 
 //////////////////PROBLEM 4////////////////////
@@ -105,8 +125,21 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+//**did not work */
 
+// const filteredFood = function(){
+// return foodArr.filteredFood.filter(function(sliders) {
+//     return foodArr.tags === 'sliders';
+//   }).length;
+// });
+
+// const filteredFood = function(tag){
+//     foodArr.filter(tag => tag === foodArr['tags'])
+// }
+console.log(foodArr['tags'])
+//console.log('sliders', filteredFood);
+
+  console.log(filteredFood(pizza, 'sliders'));
 
 
 //////////////////PROBLEM 5////////////////////
