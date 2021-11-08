@@ -202,7 +202,7 @@ const noWhitespace = '   This deal lasts until the end of March! '
 const newWhitespace = noWhitespace.trim()
 let removed = newWhitespace.splice(3, 1, 'April!')
 //deals.replace('March!' , 'April!')
-console.log(newWhitespace) === 'This deal lasts until the end of April!'
+console.log(removed) === 'This deal lasts until the end of April!'
 
 // const newWhitespace = 'This deal lasts until the end of March!'
 // deals.replace('March!'; 'April!')

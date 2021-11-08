@@ -38,8 +38,8 @@ const pizza = {
     category: 'Full Pies',
     popularity: 8,
     rating: 8,
-    tags: ['pizza', 'brick oven', 'yummy'],
-}
+    tags: ['pizza', 'brick oven', 'yummy', 'gluten-full'],
+};
 
 //////////////////PROBLEM 2////////////////////
 /* 
@@ -62,8 +62,8 @@ console.log(pizza.popularity)
 
 //CODE HERE
 
-console.log(pizza.tags)
-console.log(pizza['tags'])
+console.log(pizza.tags[3])
+
 
 /*
     Third, destructure the price off of the
@@ -74,7 +74,8 @@ console.log(pizza['tags'])
 
 //CODE HERE
 
-const {price: pizzaPrice} = pizza
+let {price:pizzaPrice} = pizza
+pizzaPrice = 16
 console.log(pizzaPrice)
 /*
     Fourth, and last, destructure the category
@@ -101,16 +102,49 @@ console.log(pizzaCategory)
 
 //CODE HERE
 
-let foodArr = {
-    name: "Slip 'n Sliders",
-    price: 10,
-    category: 'Burgers',
-    popularity: 9,
-    rating: 10,
-    tags: ['burgers', 'sliders', 'bacon'],
-}
+let foodArr = [
+    {   
+        name: "Slip 'n Sliders",
+        price: '10',
+        category: 'Burgers',
+        popularity: 10,
+        rating: 10,
+        tags: ['burgers', 'sliders', 'bacon'],
+    },
+    {
+        name: "Over the Easy top",
+        price: '12',
+        category: 'Sandwhich',
+        popularity: 10,
+        rating: 10,
+        tags: ['bacon', 'sandwhich', 'eggs'],
+    },
+    {
+        name: "Personal Pie",
+        price: '10',
+        category: 'Pizza',
+        popularity: 7,
+        rating: 7,
+        tags: ['burgers', 'sliders', 'bacon'],
+    },
+    {
+        name: "Boozy Bourbon Sliders",
+        price: '14',
+        category: 'Burgers',
+        popularity: 10,
+        rating: 10,
+        tags: ['burgers', 'sliders', 'cheese'],
+    }, 
+    {
+        name: "Maccin Mac",
+        price: '7',
+        category: 'Entree',
+        popularity: 5,
+        rating: 5,
+        tags: ['cheese', 'pasta', 'bacon'],
+    }
 
-
+]
 //////////////////PROBLEM 4////////////////////
 /* 
     Let's filter the food objects according
@@ -125,9 +159,23 @@ let foodArr = {
 
 //CODE HERE
 
-//**did not work */
 
-// const filteredFood = function(){
+
+const filteredFood = foodArr.filter(function(foodObj){
+    //console.log(foodObj.tags[0])
+    //return foodObj.tags.includes('bacon')
+    let toSave = false;
+
+    for (let i = 0; i < foodObj.tags.length; i++) {
+        if (foodObj.tags[i] === 'bacon') toSave = true;
+    }
+
+    return toSave;
+})
+
+console.log(filteredFood);
+
+//**did not work */
 // return foodArr.filteredFood.filter(function(sliders) {
 //     return foodArr.tags === 'sliders';
 //   }).length;
@@ -136,10 +184,9 @@ let foodArr = {
 // const filteredFood = function(tag){
 //     foodArr.filter(tag => tag === foodArr['tags'])
 // }
-console.log(foodArr['tags'])
+// console.log(foodArr['tags'])
 //console.log('sliders', filteredFood);
-
-  console.log(filteredFood(pizza, 'sliders'));
+// console.log(filteredFood(pizza, 'sliders'));
 
 
 //////////////////PROBLEM 5////////////////////
@@ -183,6 +230,23 @@ console.log(foodArr['tags'])
 
 //CODE HERE
 
+const filterByProperty = foodArr.filter(function(propertyObj, numberObj, typeObj){
+   
+    let toSave = false;
+
+    for (let i = 0; i < propertyObj.price.length; i++) {
+        if (propertyObj.price[i] >= 11) toSave = true;
+    }
+    for (let j = 0; j < numberObj.price.length; j++) {
+        if (numberObj.price[j] <= 11) toSave = true;
+    }
+    for (let z = 0; z < typeObj.price.length; z++) {
+        if (typeObj.price[z] === 11) toSave = true;
+    }
+    return toSave;
+})
+
+console.log(filterByProperty);
 
 /*
     Invoke the `filterByProperty` function passing
@@ -192,3 +256,5 @@ console.log(foodArr['tags'])
 */
 
 //CODE HERE
+
+console.log(filterByProperty(propertyObj, numberObj, typeObj))
