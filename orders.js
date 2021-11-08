@@ -41,7 +41,9 @@ class Ticket {
     updateStatus(newStatus){
         newStatus == ''
         this.status = newStatus;
-        console.log(`The order for customer ${this.customerID} is now ${this.status}.`);
+        return (`The order for customer ${this.customerID} is now ${this.status}.`)
+        //console.log(`The order for customer ${this.customerID} is now ${this.status}.`);
+        //USING CONSOLE LOG PRINTS OUT UNDEFINED FOR SOME REASON
     }
 };
 
@@ -77,5 +79,3 @@ console.log(firstTicket)
 //CODE HERE
 
 console.log(firstTicket.updateStatus('cocinando'));
-
-// PRINTING UNDEFINED AFER EACH CONSOLE LOG CANNOT TROUBLESHOOT OUT..
