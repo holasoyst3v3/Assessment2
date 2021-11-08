@@ -34,17 +34,57 @@ const cart = [
 ]
 
 //CODE HERE
-// const summedPrice = cart.reduce(callback[ , initialValue])
-
-// let summedPrice = cart.price.reduce(previousPrice + currentPrice);
 
 // const reducer = (previousValue, currentValue) => previousValue + currentValue;
 
+var z = cart.reduce((sum, li) => sum + li.price, 0);
+console.log(z)
 
-const summedPrice = cart.reduce(function(price, price){
-    return price + price;
-});
-console.log(summedPrice);
+// const summedPrice = cart.reduce(callback(sum, price){
+//     cart.forEach((x,i) => {
+//         //console.log(x)
+//         for (const [k , v] of Object.entries(x)){
+//             //console.log(k , v);
+//             if (k == 'price'){
+//                 console.log(v);
+//                 price == v
+//             }
+    
+//         }
+//     }
+    
+//     );
+//     return (sum + price)
+// }
+// )
+
+
+
+// cart.forEach((x,i) => {
+//     //console.log(x)
+//     for (const [k , v] of Object.entries(x)){
+//         //console.log(k , v);
+//         if (k == 'price'){
+//             console.log(v);
+//             price == v
+//         }
+
+//     }
+// }
+
+// );
+// return (sum + price)
+
+
+// let summedPrice = cart.price.reduce(previousPrice + currentPrice);
+
+
+
+
+// const summedPrice = cart.reduce(function(price, price){
+//     return price + price;
+// });
+// console.log(summedPrice);
 
 
 //////////////////PROBLEM 2////////////////////
@@ -64,6 +104,21 @@ console.log(summedPrice);
 
 //CODE HERE
 
+
+// function cartTotal(items){
+//     var total = items.reduce((sum, li) => sum + li.price, 0);
+//     return total;
+// }
+
+function calcFinalPrice(items, couponValue, tax){
+    subTotal = items.reduce((sum, li) => sum + li.price, 0);
+    taxAdded = subTotal * tax
+    taxTotal = taxAdded + subTotal
+    couponTotal = taxTotal - couponValue
+    return couponTotal.toFixed(2)
+}
+var d = calcFinalPrice(cart, 1, .05)
+console.log(d)
 
 
 //////////////////PROBLEM 3////////////////////
@@ -87,7 +142,18 @@ console.log(summedPrice);
 */
 
 /*
-    TEXT ANSWER HERE
+    Customer name: The restaurant needs to know who ordered.
+    STRING - will be letters
+
+    Address: The restaurant might need to know where to deliver.
+    STRING - Mix of numbers and letters
+    
+    Contact number: The restaurant will need to contact the customer for various reasons.
+    STRING - Will have characters that won't be read correctly ie. "-" "+" "()"
+    
+    Birthday: The restaurant might need to know their age if buying alcohol or birthday special
+    DATE - Dates are it's own data type 
+
 
 */
 
@@ -97,3 +163,9 @@ console.log(summedPrice);
 */
 
 //CODE HERE
+const customerObj = {
+    customerName:'',
+    address:'',
+    contactNumber:'',
+    birthday: Date,
+}

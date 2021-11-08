@@ -30,8 +30,23 @@
 */
 
 //CODE HERE
+class Ticket {
+    constructor(items, orderTime, customerID){
+        this.items = items;
+        this.orderTime = orderTime;
+        this.customerID = customerID;
+        this.status = 'queued';
+    }
 
+    updateStatus(newStatus){
+        newStatus == ''
+        this.status = newStatus;
+        console.log(`The order for customer ${this.customerID} is now ${this.status}.`);
+    }
+};
 
+let newTicket = new Ticket(2323, 4, 8439892);
+console.log(newTicket.updateStatus('four days')); 
 
 /*
     Create a new instance of your class.
@@ -45,6 +60,12 @@
 */
 
 //CODE HERE
+var food = ["pizza", "bread", "soda"]
+var ordered = "7:03pm"
+var customer = 575
+
+let firstTicket = new Ticket(food, ordered, customer);
+console.log(firstTicket) 
 
 
 /*
@@ -54,3 +75,7 @@
 */
 
 //CODE HERE
+
+console.log(firstTicket.updateStatus('cocinando'));
+
+// PRINTING UNDEFINED AFER EACH CONSOLE LOG CANNOT TROUBLESHOOT OUT..
